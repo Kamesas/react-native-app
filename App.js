@@ -1,21 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+import { NavBar } from "./src/NavBar";
+import AddTodo from "./src/AddTodo";
+import { ContextProvider } from "./src/ContextAPI";
+import TodoList from "./src/TodoList/TodoList";
 
-export default class App extends React.Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <ContextProvider>
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!!!</Text>
+        <NavBar title="Todo app" />
+        <AddTodo />
+        <TodoList />
       </View>
-    );
-  }
-}
+    </ContextProvider>
+  );
+};
+
+export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
+  container: {}
 });
