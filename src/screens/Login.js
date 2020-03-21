@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-export const TodoApp = () => {
+export const Login = () => {
   return (
     <View>
-      <Text>Todo app</Text>
+      <Text>Login</Text>
     </View>
   );
 };
