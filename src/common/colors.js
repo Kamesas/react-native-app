@@ -1,0 +1,9 @@
+export const BLACK_100 = "#1E2938";
+export const BLACK_200 = "#283643";
+export const BLACK_700 = "#798591";
+export const GREY = "#7c848c";
+export const WHITE = "#FDFFFF";
+export const RED_100 = "#F9595B";
+export const YELLOW_100 = "#FCB23B";
+export const GREEN = "green";
+export const ORANGE = "orange";

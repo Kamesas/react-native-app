@@ -1,24 +1,25 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { NavBar } from "./src/NavBar";
-import AddTodo from "./src/AddTodo";
-import { ContextProvider } from "./src/ContextAPI";
-import TodoList from "./src/TodoList/TodoList";
+import { StyleSheet, View } from "react-native";
+import { TodoApp } from "./src/TodoApp/TodoApp";
+import { NavBar } from "./src/common/NavBar";
 
 const App = () => {
   return (
-    <ContextProvider>
-      <View style={styles.container}>
+    <View>
+      <View>
         <NavBar title="Todo app" />
-        <AddTodo />
-        <TodoList />
       </View>
-    </ContextProvider>
+      <View style={styles.bodyContainer}>
+        <TodoApp />
+      </View>
+    </View>
   );
 };
 
 export default App;
 
 const styles = StyleSheet.create({
-  container: {}
+  bodyContainer: {
+    // paddingHorizontal: 15
+  }
 });

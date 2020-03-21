@@ -1,18 +1,9 @@
 import React, { useState, useContext } from "react";
-import {
-  StyleSheet,
-  View,
-  TextInput,
-  Alert,
-  TouchableOpacity,
-  Text
-} from "react-native";
+import { StyleSheet, View, TextInput, Alert } from "react-native";
 import { ContextTodoList } from "./ContextAPI";
-import { _setStoreData } from "./Utilits/asyncStorage";
-
-const todoColors = {
-  default: "#000"
-};
+import { _setStoreData } from "../Utilits/asyncStorage";
+import { WHITE, BLACK_100, GREEN } from "../common/colors";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const AddTodo = () => {
   const [value, setInputValue] = useState("");
@@ -30,8 +21,7 @@ const AddTodo = () => {
         id: Date.now().toString(),
         title: value.trim(),
         completed: false,
-        important: false,
-        color: todoColors.default
+        important: false
       }
     ]);
 
@@ -48,9 +38,12 @@ const AddTodo = () => {
           autoCorrect={false}
           onChangeText={text => setInputValue(text)}
         />
-        <TouchableOpacity style={styles.button} onPress={addTodoHandler}>
-          <Text style={styles.buttonText}>+</Text>
-        </TouchableOpacity>
+        <MaterialCommunityIcons
+          name="plus-circle-outline"
+          color={GREEN}
+          size={40}
+          onPress={addTodoHandler}
+        />
       </View>
     </View>
   );
@@ -60,26 +53,19 @@ export default AddTodo;
 
 const styles = StyleSheet.create({
   continer: {
-    padding: 10
+    paddingVertical: 10
   },
   formWrap: {
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "space-between",
+    paddingLeft: 20
   },
   input: {
-    width: "90%",
-    borderColor: "#aaa",
-    borderWidth: 1,
-    paddingHorizontal: 5
-  },
-  button: {
-    justifyContent: "center",
-    backgroundColor: "#000",
-    paddingHorizontal: 10
-  },
-  buttonText: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 26
+    borderBottomWidth: 1,
+    borderBottomColor: BLACK_100,
+    flexGrow: 1,
+    color: WHITE,
+    paddingLeft: 5,
+    fontSize: 20
   }
 });
