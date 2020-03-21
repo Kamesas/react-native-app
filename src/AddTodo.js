@@ -8,6 +8,7 @@ import {
   Text
 } from "react-native";
 import { ContextTodoList } from "./ContextAPI";
+import { _setStoreData } from "./Utilits/asyncStorage";
 
 const todoColors = {
   default: "#000"
@@ -24,14 +25,14 @@ const AddTodo = () => {
     }
 
     setTodoList(prev => [
+      ...prev,
       {
         id: Date.now().toString(),
         title: value.trim(),
         completed: false,
         important: false,
         color: todoColors.default
-      },
-      ...prev
+      }
     ]);
 
     setInputValue("");

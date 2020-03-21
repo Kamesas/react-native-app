@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   removeButtonTitle: {
     fontSize: 25,
     color: "red",
-    transform: [{ rotate: "45deg" }]
+    transform: [{ rotate: "45deg" }],
+    paddingBottom: 5
   }
 });
