@@ -5,7 +5,7 @@ import { ContextProvider } from "./ContextAPI";
 import TodoList from "./TodoList/TodoList";
 import { BLACK_200 } from "../common/colors";
 
-export const TodoApp = () => {
+const TodoApp = () => {
   return (
     <ContextProvider>
       <View style={styles.container}>
@@ -15,6 +15,8 @@ export const TodoApp = () => {
     </ContextProvider>
   );
 };
+
+export default TodoApp;
 
 const styles = StyleSheet.create({
   container: {

@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { SafeAreaLayout } from "./SafeAreaLayout";
+import Todo from "../TodoApp/TodoApp";
 
 export const TodoApp = () => {
   return (
-    <View>
-      <Text>Todo app</Text>
-    </View>
+    <SafeAreaLayout>
+      <Todo />
+    </SafeAreaLayout>
   );
 };

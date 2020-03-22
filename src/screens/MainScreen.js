@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Text } from "react-native";
+import { SafeAreaLayout } from "../screens/SafeAreaLayout";
 
 export const MainScreen = () => {
   return (
-    <View>
+    <SafeAreaLayout>
       <Text>MainScreen</Text>
-    </View>
+    </SafeAreaLayout>
   );
 };

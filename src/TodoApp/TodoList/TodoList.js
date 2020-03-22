@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, View } from "react-native";
 import { ContextTodoList } from "../ContextAPI";
 import TodoListItem from "./TodoListItem";
 
@@ -30,6 +30,6 @@ export default TodoList;
 
 const styles = StyleSheet.create({
   container: {
-    height: "100%"
+    // height: "100%"
   }
 });
