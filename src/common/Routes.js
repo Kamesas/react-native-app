@@ -1,36 +1,47 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { MainScreen } from "../screens/MainScreen";
-import { Login } from "../screens/Login";
-import { TodoAppScreen } from "../screens/TodoAppScreen";
-import { About } from "../screens/About";
-import { Register } from "../screens/Register";
 
-const Stack = createStackNavigator();
+import { ActivityIndicator, AsyncStorage, Text } from "react-native";
+import { AuthContext } from "./AuthProvider";
+import { AppTabs } from "./AppTabs";
+import { AuthStack } from "./AuthStack";
 
 export const Routes = () => {
+  const [loading, setLoading] = useState(true);
+  const { user, login } = useContext(AuthContext);
+  console.log(user);
+
+  useEffect(() => {
+    AsyncStorage.getItem("user")
+      .then(user => {
+        if (user) {
+          login();
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <ActivityIndicator
+        size="large"
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          flex: 1
+        }}
+      />
+    );
+  }
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
-        <Stack.Screen
-          name="Todo app"
-          options={{
-            headerTitle: "Todo app"
-          }}
-          component={TodoAppScreen}
-        />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen
-          name="Main"
-          options={{
-            headerTitle: "Main"
-          }}
-          component={MainScreen}
-        />
-      </Stack.Navigator>
+      {user ? <AppTabs /> : <AuthStack />}
     </NavigationContainer>
   );
 };

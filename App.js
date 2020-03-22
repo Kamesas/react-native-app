@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
 import { AppLoading } from "expo";
 import { loadFonts } from "./src/Utilits/loadFonts";
-import { Routes } from "./src/common/Routes";
+import { Providers } from "./src/common/Providers";
 
 const App = () => {
   const [isReady, setIsReady] = useState(false);
@@ -17,7 +16,7 @@ const App = () => {
     );
   }
 
-  return <Routes />;
+  return <Providers />;
 };
 
 export default App;
