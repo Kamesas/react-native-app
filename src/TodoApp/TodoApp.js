@@ -5,7 +5,9 @@ import { ContextProvider } from "./ContextAPI";
 import TodoList from "./TodoList/TodoList";
 import { BLACK_200 } from "../common/colors";
 
-const TodoApp = () => {
+const TodoApp = props => {
+  console.log(props.route.name);
+
   return (
     <ContextProvider>
       <View style={styles.container}>

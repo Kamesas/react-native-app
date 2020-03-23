@@ -9,6 +9,8 @@ const TodoList = () => {
 
   if (!todoList || todoList.length < 0) return null;
 
+  // const importantList = todoList.filter(item => item.important);
+
   const renderItem = ({ item }) => (
     <TodoListItem
       key={item.id}

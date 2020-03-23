@@ -64,7 +64,8 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
         <FontAwesome
           name={selectedId === id ? "chevron-up" : "chevron-down"}
           color={ORANGE}
-          size={36}
+          style={{ padding: 10 }}
+          size={20}
           onPress={() => showDetailHandler(id)}
         />
       </View>
@@ -74,19 +75,22 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
           <AntDesign
             name="warning"
             color={YELLOW_100}
-            size={30}
+            style={{ padding: 10 }}
+            size={20}
             onPress={() => onImportantHandler(id)}
           />
           <MaterialIcons
             name="done"
             color={GREEN}
-            size={34}
+            style={{ padding: 10 }}
+            size={20}
             onPress={() => completedHandler(id)}
           />
           <AntDesign
             name="delete"
             color={RED_100}
-            size={30}
+            style={{ padding: 10 }}
+            size={20}
             onPress={() => onRemoveHandler(id)}
           />
         </View>
