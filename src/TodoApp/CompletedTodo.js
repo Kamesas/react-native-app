@@ -1,18 +1,16 @@
 import React, { useContext } from "react";
-import AddTodo from "./AddTodo";
+import { Text } from "react-native";
 import TodoList from "./TodoList/TodoList";
 import { ContextTodoList } from "./ContextAPI";
 import { TodoAppLayout } from "./TodoAppLayout";
 
-const TodoApp = () => {
-  const { currentTodoList } = useContext(ContextTodoList);
+export const CompletedTodo = () => {
+  const { completedList } = useContext(ContextTodoList);
 
   return (
     <TodoAppLayout>
-      <AddTodo />
-      <TodoList todoList={currentTodoList} />
+      <Text>Completed list !</Text>
+      <TodoList todoList={completedList} />
     </TodoAppLayout>
   );
 };
-
-export default TodoApp;

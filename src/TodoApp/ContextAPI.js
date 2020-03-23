@@ -5,6 +5,9 @@ const ContextTodoList = createContext({});
 
 const ContextProvider = ({ children }) => {
   const [todoList, setTodoList] = useState([]);
+  const [importantList, setImportantList] = useState([]);
+  const [completedList, setCompletedList] = useState([]);
+  const [currentTodoList, setCurrentTodoLIst] = useState([]);
 
   const completedHandler = id => {
     const copyState = todoList;
@@ -38,6 +41,11 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     _setStoreData("RN-tasks", todoList);
+    setImportantList(
+      todoList.filter(item => item.important && !item.completed)
+    );
+    setCompletedList(todoList.filter(item => item.completed));
+    setCurrentTodoLIst(todoList.filter(item => !item.completed));
   }, [todoList]);
 
   const onRemoveHandler = id => {
@@ -48,6 +56,9 @@ const ContextProvider = ({ children }) => {
     <ContextTodoList.Provider
       value={{
         todoList,
+        importantList,
+        completedList,
+        currentTodoList,
         setTodoList,
         onRemoveHandler,
         completedHandler,
