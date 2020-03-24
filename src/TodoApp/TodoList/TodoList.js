@@ -6,7 +6,6 @@ const TodoList = ({ todoList }) => {
   const [selectedId, setSelectedId] = useState("");
 
   if (!todoList || todoList.length < 0) return null;
-
   const renderItem = ({ item }) => (
     <TodoListItem
       key={item.id}

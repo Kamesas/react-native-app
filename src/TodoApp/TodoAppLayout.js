@@ -9,6 +9,7 @@ export const TodoAppLayout = ({ children }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: BLACK_200,
-    paddingRight: 5
+    paddingRight: 5,
+    height: "100%"
   }
 });

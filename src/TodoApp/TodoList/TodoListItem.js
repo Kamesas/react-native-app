@@ -1,26 +1,12 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { ContextTodoList } from "../ContextAPI";
-import {
-  BLACK_100,
-  WHITE,
-  ORANGE,
-  RED_100,
-  GREEN,
-  YELLOW_100,
-  GREY
-} from "../../common/colors";
-import {
-  FontAwesome,
-  AntDesign,
-  MaterialIcons,
-  Entypo
-} from "@expo/vector-icons";
+import { BLACK_100, WHITE, ORANGE, RED_100, GREY } from "../../common/colors";
+import { FontAwesome, Entypo } from "@expo/vector-icons";
+import { ButtonSet } from "./ButtonSet";
 
 const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
-  const { onRemoveHandler, completedHandler, onImportantHandler } = useContext(
-    ContextTodoList
-  );
+  const { onRemoveHandler, completedHandler } = useContext(ContextTodoList);
 
   const showDetailHandler = id => {
     if (selectedId === id) {
@@ -34,10 +20,11 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
   return (
     <>
       <View
-        style={{
-          ...styles.container,
-          ...{ borderBottomWidth: selectedId === id ? 0 : 1 }
-        }}
+        style={styles.container}
+        // style={{
+        //   ...styles.container,
+        //   ...{ borderBottomWidth: selectedId === id ? 0 : 1 }
+        // }}
       >
         <View style={styles.notificationDot}>
           <Entypo
@@ -69,32 +56,7 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
           onPress={() => showDetailHandler(id)}
         />
       </View>
-
-      {selectedId === id && (
-        <View style={styles.container}>
-          <Entypo
-            name="flag"
-            color={YELLOW_100}
-            style={{ padding: 10 }}
-            size={20}
-            onPress={() => onImportantHandler(id)}
-          />
-          <MaterialIcons
-            name="done"
-            color={GREEN}
-            style={{ padding: 10 }}
-            size={20}
-            onPress={() => completedHandler(id)}
-          />
-          <AntDesign
-            name="delete"
-            color={RED_100}
-            style={{ padding: 10 }}
-            size={20}
-            onPress={() => onRemoveHandler(id)}
-          />
-        </View>
-      )}
+      {selectedId === id && <ButtonSet styles={styles.container} id={id} />}
     </>
   );
 };
