@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import AddTodo from "./AddTodo";
-import TodoList from "./TodoList/TodoList";
-import { ContextTodoList } from "./ContextAPI";
-import { TodoAppLayout } from "./TodoAppLayout";
+import AddTodo from "../AddTodo";
+import TodoList from "../TodoList/TodoList";
+import { ContextTodoList } from "../ContextAPI";
+import { TodoAppLayout } from "../TodoAppLayout";
 
-const TodoApp = () => {
+export const TodoApp = () => {
   const { currentTodoList } = useContext(ContextTodoList);
 
   return (
@@ -14,5 +14,3 @@ const TodoApp = () => {
     </TodoAppLayout>
   );
 };
-
-export default TodoApp;

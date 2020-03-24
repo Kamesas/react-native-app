@@ -72,8 +72,8 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
 
       {selectedId === id && (
         <View style={styles.container}>
-          <AntDesign
-            name="warning"
+          <Entypo
+            name="flag"
             color={YELLOW_100}
             style={{ padding: 10 }}
             size={20}
