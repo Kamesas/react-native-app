@@ -12,7 +12,7 @@ export const ButtonSet = ({ styles, id }) => {
   return (
     <View style={styles}>
       <Entypo
-        name="flag"
+        name="star-outlined"
         color={YELLOW_100}
         style={{ padding: 10 }}
         size={20}

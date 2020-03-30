@@ -1,7 +1,13 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { ContextTodoList } from "../ContextAPI";
-import { BLACK_100, WHITE, ORANGE, RED_100, GREY } from "../../common/colors";
+import {
+  BLACK_100,
+  WHITE,
+  ORANGE,
+  YELLOW_100,
+  GREY
+} from "../../common/colors";
 import { FontAwesome, Entypo } from "@expo/vector-icons";
 import { ButtonSet } from "./ButtonSet";
 
@@ -20,16 +26,15 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
   return (
     <>
       <View
-        style={styles.container}
-        // style={{
-        //   ...styles.container,
-        //   ...{ borderBottomWidth: selectedId === id ? 0 : 1 }
-        // }}
+        style={{
+          ...styles.container,
+          ...{ borderBottomWidth: selectedId === id ? 0 : 1 }
+        }}
       >
         <View style={styles.notificationDot}>
           <Entypo
             name="dot-single"
-            color={important ? RED_100 : WHITE}
+            color={important ? YELLOW_100 : WHITE}
             size={24}
             onPress={() => onRemoveHandler(id)}
           />

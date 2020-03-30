@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { StyleSheet, View, TextInput, Alert } from "react-native";
 import { ContextTodoList } from "./ContextAPI";
 import { _setStoreData } from "../Utilits/asyncStorage";
-import { WHITE, BLACK_100, GREEN } from "../common/colors";
+import { WHITE, GREEN } from "../common/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const AddTodo = () => {
@@ -32,7 +32,9 @@ const AddTodo = () => {
     <View style={styles.continer}>
       <View style={styles.formWrap}>
         <TextInput
-          autofocus
+          placeholder="enter text here ..."
+          onSubmitEditing={addTodoHandler}
+          keyboardAppearance="dark"
           style={styles.input}
           value={value}
           autoCapitalize={"none"}
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderBottomWidth: 1,
-    borderBottomColor: BLACK_100,
+    borderBottomColor: GREEN,
     flexGrow: 1,
     color: WHITE,
     paddingLeft: 5,

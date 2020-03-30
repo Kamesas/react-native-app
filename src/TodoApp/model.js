@@ -9,7 +9,7 @@ export const tabNav = [
     name: "ImportantTodo",
     label: "Top",
     component: ImportantTodo,
-    iconName: "flag"
+    iconName: "star-outlined"
   },
   {
     name: "CompletedTodo",
