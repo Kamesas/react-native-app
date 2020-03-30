@@ -32,6 +32,7 @@ const AddTodo = () => {
     <View style={styles.continer}>
       <View style={styles.formWrap}>
         <TextInput
+          autofocus
           style={styles.input}
           value={value}
           autoCapitalize={"none"}
