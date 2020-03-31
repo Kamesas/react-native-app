@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import TodoListItem from "./TodoListItem";
 
 const TodoList = ({ todoList }) => {
@@ -14,7 +14,15 @@ const TodoList = ({ todoList }) => {
       setSelectedId={setSelectedId}
     />
   );
-  return <FlatList data={todoList} renderItem={renderItem} />;
+  return (
+    <View sltyle={{ flex: 1 }}>
+      <FlatList
+        data={todoList}
+        renderItem={renderItem}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      />
+    </View>
+  );
 };
 
 export default TodoList;

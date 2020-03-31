@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { StyleSheet, View, TextInput, Alert } from "react-native";
+import { StyleSheet, View, TextInput, Alert, Keyboard } from "react-native";
 import { ContextTodoList } from "./ContextAPI";
 import { _setStoreData } from "../Utilits/asyncStorage";
 import { WHITE, GREEN } from "../common/colors";
@@ -26,6 +26,7 @@ const AddTodo = () => {
     ]);
 
     setInputValue("");
+    Keyboard.dismiss();
   };
 
   return (

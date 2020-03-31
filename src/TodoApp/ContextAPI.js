@@ -36,7 +36,9 @@ const ContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    _retrieveData("RN-tasks").then(res => setTodoList(JSON.parse(res)));
+    _retrieveData("RN-tasks")
+      .then(res => setTodoList(JSON.parse(res)))
+      .catch(err => console.log("err", err));
   }, []);
 
   useEffect(() => {
