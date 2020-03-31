@@ -4,7 +4,7 @@ import { AntDesign, MaterialIcons, Entypo } from "@expo/vector-icons";
 import { ContextTodoList } from "../ContextAPI";
 import { View } from "react-native";
 
-export const ButtonSet = ({ styles, id }) => {
+export const ButtonSet = ({ styles, id, important }) => {
   const { onRemoveHandler, completedHandler, onImportantHandler } = useContext(
     ContextTodoList
   );
@@ -12,7 +12,7 @@ export const ButtonSet = ({ styles, id }) => {
   return (
     <View style={styles}>
       <Entypo
-        name="star-outlined"
+        name={important ? "star" : "star-outlined"}
         color={YELLOW_100}
         style={{ padding: 10 }}
         size={20}

@@ -9,28 +9,28 @@ import { Keyboard } from "react-native";
 const TodoBottomNavigation = createBottomTabNavigator();
 
 export const TodoAppIndex = () => {
-  const [bottomStyle, setBottomStyle] = useState(0);
+  // const [bottomStyle, setBottomStyle] = useState(0);
 
-  useEffect(() => {
-    const keyboardDidShowListener = Keyboard.addListener(
-      "keyboardDidShow",
-      () => {
-        setBottomStyle("-100%");
-      }
-    );
+  // useEffect(() => {
+  //   const keyboardDidShowListener = Keyboard.addListener(
+  //     "keyboardDidShow",
+  //     () => {
+  //       setBottomStyle("-1%");
+  //     }
+  //   );
 
-    const keyboardDidHideListener = Keyboard.addListener(
-      "keyboardDidHide",
-      () => {
-        setBottomStyle(0);
-      }
-    );
+  //   const keyboardDidHideListener = Keyboard.addListener(
+  //     "keyboardDidHide",
+  //     () => {
+  //       setBottomStyle(0);
+  //     }
+  //   );
 
-    return function cleanup() {
-      keyboardDidShowListener.remove();
-      keyboardDidHideListener.remove();
-    };
-  }, []); // eslint-disable-line
+  //   return function cleanup() {
+  //     keyboardDidShowListener.remove();
+  //     keyboardDidHideListener.remove();
+  //   };
+  // }, []); // eslint-disable-line
 
   return (
     <ContextProvider>
@@ -40,9 +40,9 @@ export const TodoAppIndex = () => {
           activeTintColor: WHITE,
           activeBackgroundColor: BLACK_100,
           inactiveTintColor: GREY,
-          inactiveBackgroundColor: BLACK_200,
-          keyboardHidesTabBar: true,
-          style: { position: "absolute", bottom: bottomStyle }
+          inactiveBackgroundColor: BLACK_200
+          // keyboardHidesTabBar: false
+          // style: { position: "absolute", bottom: bottomStyle }
         }}
       >
         {tabNav.map((item, i) => {

@@ -23,6 +23,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.alex_semak.todo_app",
+      "versionCode": 1
     }
   }
 }

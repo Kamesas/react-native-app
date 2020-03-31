@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { BLACK_200, WHITE } from "../common/colors";
+import { loadFonts } from "../Utilits/loadFonts";
 
 export const TodoAppLayout = ({ children, title }) => {
   return (
@@ -20,6 +21,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     color: WHITE,
-    paddingTop: 10
+    paddingTop: 10,
+    letterSpacing: 1,
+    textAlign: "center",
+    fontFamily: "RobotoBold"
   }
 });

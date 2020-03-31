@@ -62,14 +62,14 @@ const styles = StyleSheet.create({
   formWrap: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingLeft: 20
+    paddingLeft: 10
   },
   input: {
     borderBottomWidth: 1,
     borderBottomColor: GREEN,
-    flexGrow: 1,
+    width: "85%",
     color: WHITE,
-    paddingLeft: 5,
-    fontSize: 20
+    paddingLeft: 10,
+    fontSize: 18
   }
 });

@@ -39,19 +39,19 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
             onPress={() => onRemoveHandler(id)}
           />
         </View>
-        <TouchableOpacity onPress={() => completedHandler(id)}>
-          <Text
-            style={{
-              ...styles.title,
-              ...{
-                textDecorationLine: completed ? "line-through" : "none",
-                color: completed ? GREY : WHITE
-              }
-            }}
-          >
-            {title}
-          </Text>
-        </TouchableOpacity>
+        {/* <TouchableOpacity onPress={() => completedHandler(id)}> */}
+        <Text
+          style={{
+            ...styles.title,
+            ...{
+              textDecorationLine: completed ? "line-through" : "none",
+              color: completed ? GREY : important ? YELLOW_100 : WHITE
+            }
+          }}
+        >
+          {title}
+        </Text>
+        {/* </TouchableOpacity> */}
 
         <FontAwesome
           name={selectedId === id ? "chevron-up" : "chevron-down"}
@@ -61,7 +61,9 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
           onPress={() => showDetailHandler(id)}
         />
       </View>
-      {selectedId === id && <ButtonSet styles={styles.container} id={id} />}
+      {selectedId === id && (
+        <ButtonSet styles={styles.container} id={id} important={important} />
+      )}
     </>
   );
 };
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
     top: "50%"
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     color: WHITE
   }
 });
