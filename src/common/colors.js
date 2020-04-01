@@ -4,6 +4,7 @@ export const BLACK_700 = "#798591";
 export const GREY = "#7c848c";
 export const WHITE = "#FDFFFF";
 export const RED_100 = "#F9595B";
+export const RED_200 = "#C1161F";
 export const YELLOW_100 = "#FCB23B";
 export const GREEN = "green";
 export const ORANGE = "orange";

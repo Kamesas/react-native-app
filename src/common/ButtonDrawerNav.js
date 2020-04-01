@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { WHITE } from "./colors";
+import { RED_200 } from "./colors";
 
 export const ButtonDrawerNav = ({ navigation }) => {
   if (!navigation) return null;
@@ -10,7 +10,7 @@ export const ButtonDrawerNav = ({ navigation }) => {
       style={styles.drawerButtonWrap}
       onPress={() => navigation.toggleDrawer()}
     >
-      <AntDesign name="menu-fold" size={30} color={WHITE} />
+      <AntDesign name="menu-fold" size={30} color={RED_200} />
     </TouchableOpacity>
   );
 };

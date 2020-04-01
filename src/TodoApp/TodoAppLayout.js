@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "flex-start",
     paddingTop: 6
   },
@@ -30,11 +30,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: WHITE,
     letterSpacing: 1,
+    flexGrow: 1,
+    textAlign: "center",
     fontFamily: "RobotoBold"
   },
   lengthList: {
     fontSize: 18,
     color: WHITE,
-    fontFamily: "LemonadaRegular"
+    fontFamily: "LemonadaRegular",
+    paddingRight: 7
   }
 });
