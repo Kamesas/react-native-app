@@ -1,12 +1,14 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { BLACK_200, WHITE } from "../common/colors";
-import { loadFonts } from "../Utilits/loadFonts";
 
-export const TodoAppLayout = ({ children, title }) => {
+export const TodoAppLayout = ({ children, title, lengthList }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <View style={styles.header}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.lengthList}>{lengthList}</Text>
+      </View>
       {children}
     </View>
   );
@@ -18,12 +20,21 @@ const styles = StyleSheet.create({
     paddingRight: 5,
     height: "100%"
   },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
+    paddingTop: 6
+  },
   title: {
     fontSize: 24,
     color: WHITE,
-    paddingTop: 10,
     letterSpacing: 1,
-    textAlign: "center",
     fontFamily: "RobotoBold"
+  },
+  lengthList: {
+    fontSize: 18,
+    color: WHITE,
+    fontFamily: "LemonadaRegular"
   }
 });

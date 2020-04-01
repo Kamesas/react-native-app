@@ -15,11 +15,11 @@ const TodoList = ({ todoList }) => {
     />
   );
   return (
-    <View sltyle={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <FlatList
         data={todoList}
         renderItem={renderItem}
-        contentContainerStyle={{ paddingBottom: 20 }}
+        contentContainerStyle={{ paddingBottom: 10 }}
       />
     </View>
   );

@@ -7,7 +7,7 @@ export const CompletedTodo = () => {
   const { completedList } = useContext(ContextTodoList);
 
   return (
-    <TodoAppLayout title="Completed tasks">
+    <TodoAppLayout title="Completed tasks" lengthList={completedList.length}>
       <TodoList todoList={completedList} />
     </TodoAppLayout>
   );

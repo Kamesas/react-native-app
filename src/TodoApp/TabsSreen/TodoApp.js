@@ -8,7 +8,7 @@ export const TodoApp = () => {
   const { currentTodoList } = useContext(ContextTodoList);
 
   return (
-    <TodoAppLayout title="Todo app">
+    <TodoAppLayout title="Todo app" lengthList={currentTodoList.length}>
       <AddTodo />
       <TodoList todoList={currentTodoList} />
     </TodoAppLayout>

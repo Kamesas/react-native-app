@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { ContextTodoList } from "../ContextAPI";
 import {
   BLACK_100,
@@ -12,7 +12,7 @@ import { FontAwesome, Entypo } from "@expo/vector-icons";
 import { ButtonSet } from "./ButtonSet";
 
 const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
-  const { onRemoveHandler, completedHandler } = useContext(ContextTodoList);
+  const { onRemoveHandler } = useContext(ContextTodoList);
 
   const showDetailHandler = id => {
     if (selectedId === id) {
@@ -26,12 +26,12 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
   return (
     <>
       <View
-        style={{
-          ...styles.container,
-          ...{ borderBottomWidth: selectedId === id ? 0 : 1 }
-        }}
+        style={[
+          styles.container,
+          { borderBottomWidth: selectedId === id ? 0 : 1 }
+        ]}
       >
-        <View style={styles.notificationDot}>
+        <View style={styles.notificationDotWrap}>
           <Entypo
             name="dot-single"
             color={important ? YELLOW_100 : WHITE}
@@ -39,7 +39,6 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
             onPress={() => onRemoveHandler(id)}
           />
         </View>
-        {/* <TouchableOpacity onPress={() => completedHandler(id)}> */}
         <Text
           style={{
             ...styles.title,
@@ -51,7 +50,6 @@ const TodoListItem = ({ todo, setSelectedId, selectedId }) => {
         >
           {title}
         </Text>
-        {/* </TouchableOpacity> */}
 
         <FontAwesome
           name={selectedId === id ? "chevron-up" : "chevron-down"}
@@ -78,13 +76,12 @@ const styles = StyleSheet.create({
     borderBottomColor: BLACK_100,
     borderBottomWidth: 1,
     marginLeft: 20,
-    paddingVertical: 10,
+    paddingVertical: 7,
     position: "relative"
   },
-  notificationDot: {
+  notificationDotWrap: {
     position: "absolute",
-    left: -25,
-    top: "50%"
+    left: -25
   },
   title: {
     fontSize: 18,

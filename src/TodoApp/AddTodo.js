@@ -10,19 +10,16 @@ const AddTodo = () => {
   const { setTodoList } = useContext(ContextTodoList);
 
   const addTodoHandler = () => {
-    if (!value.trim()) {
-      Alert.alert("Input is empty !");
-      return;
-    }
+    if (!value.trim()) return;
 
     setTodoList(prev => [
-      ...prev,
       {
         id: Date.now().toString(),
         title: value.trim(),
         completed: false,
         important: false
-      }
+      },
+      ...prev
     ]);
 
     setInputValue("");
